@@ -1,0 +1,26 @@
+Due Date 
+Friday, April 28, 2017
+1:00 PM
+
+Points Possible
+100
+
+DO NOT SUBMIT ASSIGNMENT THROUGH BLACKBOARD. SUBMIT ON YOUR CLASS FOLDER.
+
+The attached files show how sockets work in a super simple server/client connection using sockets. This is basic connectivity code. You will need to research on it, and improve it.
+
+
+YOUR CHALLENGE:
+
+1) Modify the program to connect from different clients (connect to your peer PC or laptop)
+
+2) Modify the program to connect to more than one client at the same time (one server connection - multiple conversations from different clients)
+
+
+EXTRA CREDIT (Up to 10-20 pts)
+
+Develop a working chat with a swing or applet interface, same specs as above.
+
+** Sequence Diagram for CHAT only
+** State Diagram for Sockets
+CH 11 and CH 12 Book for Sockets if you read!

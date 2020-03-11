@@ -1,0 +1,8 @@
+<DBCon>
+    <db-host>localhost</db-host>
+    <db-port>3306</db-port>
+    <db>CS3331</db>
+    <db-username>root</db-username>
+    <db-password>P@ssw0rd</db-password>
+    <db-query>SELECT Name FROM Test</db-name>
+</DBCon>

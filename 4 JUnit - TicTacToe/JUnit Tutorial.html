@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://javatpoint.com/junit-tutorial -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>JUnit Tutorial | Testing Framework for java - javatpoint</title><link rel="SHORTCUT ICON" href="http://javatpoint.com/images/logo/icon.png"><link rel="stylesheet" type="text/css" href="./JUnit Tutorial_files/link.css"><meta name="keywords" content="junit, tutorial, junit 4, example, eclipse, test cases"><meta name="description" content="Junit tutorial for beginners and professionals, junit 4, a testing framework for java programmer, creating test cases, junit example in eclipse"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="canonical" href="http://www.javatpoint.com/junit-tutorial"><meta property="og:locale" content="en_US"><meta property="og:type" content="article"><meta name="twitter:title" property="og:title" content="JUnit Tutorial | Testing Framework for java - javatpoint"><meta name="twitter:description" property="og:description" content="Junit tutorial for beginners and professionals, junit 4, a testing framework for java programmer, creating test cases, junit example in eclipse"><meta property="og:url" content="http://www.javatpoint.com/junit-tutorial"><meta property="og:site_name" content="www.javatpoint.com"><meta name="twitter:card" content="summary"><meta name="twitter:site" content="@pagejavatpoint"><meta name="twitter:domain" content="www.javatpoint.com"><meta name="twitter:creator" content="@pagejavatpoint"><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">.dp-j .annotation { color: #646464; }.dp-j .number { color: #C00000; }</style><style type="text/css">#dpmaxz_fbm_gui *, #dpmaxz_fbm_gui *:after, #dpmaxz_fbm_gui *:before,#dpmaxz_fbi_root *, #dpmaxz_fbi_root *:after, #dpmaxz_fbi_root *:before{margin: 0;padding: 0;box-sizing: content-box; width: auto;}.dpmaxz_hidden {visibility: hidden;}#dpmaxz_fbm_gui {position: static; -moz-user-select: none;-webkit-user-select: none; margin: 0;padding: 0;cursor: default;}#dpmaxz_fbi_root {-webkit-user-select: none; position: relative; display: inline-block; z-index: 2147483646; margin: 0;padding: 0;}#dpmaxz_fbi_root .dpmaxz_fbi_mainbkg { display: block;position: absolute;cursor: default;width: 50px;height: 24px;background: transparent url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/mainbkg.png) no-repeat;}#dpmaxz_fbi_root .dpmaxz_fbi_mainbkg .dpmaxz_fbi_fbishield {float: left;margin: -16px 0 0 3px;  padding: 0;background: transparent url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/mainimg.png) no-repeat;}#dpmaxz_fbi_root .dpmaxz_fbi_mainbkg .dpmaxz_fbi_authok {background: transparent url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/mainimg_ok.png) no-repeat;}#dpmaxz_fbi_root .dpmaxz_fbi_mainbkg .dpmaxz_fbi_authno {background: transparent url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/mainimg_no.png) no-repeat;}#dpmaxz_fbi_root .dpmaxz_fbi_mainbkg .dpmaxz_fbi_xchg {background: transparent url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/mainxchg.png) no-repeat;}#dpmaxz_fbi_root .dpmaxz_fbi_mainbkg .dpmaxz_fbi_menuact {background: transparent url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/mainmact.png) no-repeat;}#dpmaxz_fbi_root .dpmaxz_fbi_mainbkg .dpmaxz_fbi_add {height: 16px;width: 15px;float: right;background: transparent url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/mainadd.png) no-repeat;margin: 0 -16px 0 0;}#dpmaxz_fbm_gui .dpmaxz_fbm_menus {position: absolute; z-index: 2147483647;}.dpmaxz_fbm_menusrel {position: relative;}#dpmaxz_fbm_gui .dpmaxz_fbm_menus ul {position: absolute; left: 0;top: 22px; list-style: none;white-space: nowrap;border: 1px solid #a0a0a0;background-image: -moz-linear-gradient(top, rgb(240,245,255) 73%, white 100%); background-image: -webkit-linear-gradient(top, rgb(240,245,255) 73%, white 100%);box-shadow: 4px 4px 4px -3px #605F70;font-family: 'Segoe UI',Verdana,Arial;font-style: normal;font-size: 1em;padding: 3px 3px;margin: 2px 4px 2px 4px;}#dpmaxz_fbm_gui .dpmaxz_fbm_menus ul li {text-decoration: none;text-align: left;margin: 0; padding: 0;list-style: none;}#dpmaxz_fbm_gui .dpmaxz_fbm_menus ul li:hover {border: 1px solid #aecff7;-webkit-border-radius: 4px;background-color: #edf1f6;margin: -1px;}#dpmaxz_fbm_gui .dpmaxz_fbm_menus .dpmaxz_fbm_row {position: relative;color: black;height: 22px;line-height: 22px;vertical-align: middle;float: none;}#dpmaxz_fbm_gui .dpmaxz_fbm_menus .dpmaxz_fbm_row span {display: inline-block !important;}#dpmaxz_fbm_gui .dpmaxz_fbm_menus .dpmaxz_fbm_rowicon {display: inline-block;width: 26px;height: 22px;position: relative;vertical-align: top;border-right: 1px solid #e2e3e3;font-size: 12px; color: black;}#dpmaxz_fbm_gui .dpmaxz_fbm_menus .dpmaxz_fbm_rowtext {display: inline-block;border-left: 1px solid #ffffff;padding: 0 4px;font: normal 1em 'Segoe UI',Verdana,Arial; font-size: 12px;}.dpmaxz_highlight {border-image: url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/highlighter.png) 5 9 8 6 repeat;border-style: solid;}#dpmaxz_fbi_root .dpmaxz_fbi_mainbkg .dpmaxz_fbi_fbishield {width: 32px; height: 37px;}.dpmaxz_cf:after {clear: both;content: '.';display: block;font-size: 0;height: 0;line-height: 0;visibility: hidden;}.dpmaxz_hide {display: none;}#dpmaxz_all div {margin: 0;padding: 0;display: block; white-space: normal; text-align: left; }#dpmaxz_all *, #dpmaxz_all *:after, #dpmaxz_all *:before{margin: 0;padding: 0;box-sizing: content-box; width: auto;}#dpmaxz_all {position:fixed;z-index:2147483646;-webkit-user-select: none; cursor: default;transition: visibility .2s cubic-bezier(0, 0, 0, 1.21),opacity .2s cubic-bezier(0, 0, 0, 1.21);}.dpmaxz_all_hidden {visibility: hidden;opacity: 0;}.dpmaxz_fbb_shadowframe {position:relative;}.dpmaxz_fbb_caption {position:relative;}.dpmaxz_fbb_mainimg {float: left;}.dpmaxz_float_right {float: right;}#dpmaxz_all * {box-sizing: content-box;}#dpmaxz_all input[type='button']{width: auto; height: auto;min-width: auto; }#dpmaxz_all input[type='checkbox']{margin: 0;width: auto;        height: auto;       opacity: 1;         float: none;        position: static;}#dpmaxz_all {right: 380px;top: 10px;}#dpmaxz_all .dpmaxz_fbb_shadowframe {width:370px;background: url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/bar-bkg.png) repeat scroll 0 0;background-size: 100% 100%; background-color: #f9f9f9;border: 1px solid #bebebe;border-radius: 3px;box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);}#dpmaxz_all #dpmaxz_cap {margin-left: 10px;vertical-align:top;}#dpmaxz_all .dpmaxz_fbb_caption {height: 34px;padding: 12px 0 0 18px;font: normal normal bold 15px/26px 'Helvetica Neue',Helvetica,Arial,sans-serif;background-color: rgba(184, 184, 184, 0.3);color:#5f5f5f;}#dpmaxz_all .dpmaxz_fbb_mainbody {padding: 16px 12px 14px;}#dpmaxz_all .dpmaxz_fbb_maintext {margin-left:60px;font: normal normal normal 12px/18px 'Helvetica Neue',Helvetica,Arial,sans-serif;color: #414141;}#dpmaxz_all .dpmaxz_btn_wrap {margin-top:20px;}#dpmaxz_all input[type='button'].dpmaxz_fbb_btn {line-height: normal;overflow: visible;cursor: pointer;text-align: center;vertical-align: middle;text-decoration: none;transition: all .2s ease 0;font:normal 12px/18px 'Helvetica Neue',Helvetica,Arial,sans-serif;letter-spacing: 0.03em; border: 1px solid #aaa;border-radius: 2px;}#dpmaxz_all input[type='button'].dpmaxz_fbb_btn:hover, #dpmaxz_all input[type='button'].dpmaxz_fbb_btn:focus {color: #212121;border: 1px solid #999;background-color: #fff;border-color: #8b8b8b;box-shadow: 1px 1px 2px 2px rgba(119, 119, 119, 0.23);}#dpmaxz_all input[type='button'].dpmaxz_fbb_btn:hover:disabled{box-shadow:none}#dpmaxz_all input[type='button'].dpmaxz_fbb_mbtn {position: relative;display: inline-block;padding: 8px 15px;color: #000;background-color:#f8f8f8;}#dpmaxz_all input[type='button'].dpmaxz_fbb_mbtn:hover, #dpmaxz_all input[type='button'].dpmaxz_fbb_mbtn:focus {}#dpmaxz_all input[type='button'].dpmaxz_fbb_mbtn:active {box-shadow: none;}#dpmaxz_all input[type='button'].dpmaxz_fbb_mbtn:disabled {color: #bbb;cursor: default;border: 1px solid #e3e3e3;}#dpmaxz_all input[type='button']#dpmaxs_c.dpmaxz_fbb_close {position: absolute;right: 0;width: 42px;margin: 0 12px;padding: 2px 10px;color: #555;background-color:rgba(68,202,255,0);}#dpmaxz_all .dpmaxz_fbb_chk * {font:normal normal normal 12px/18px 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#414141;}#dpmaxz_all .dpmaxz_fbb_chk label {display: block; margin-top:10px;margin-left:60px;}#dpmaxz_all .dpmaxz_fbb_chk span {margin-left:6px;line-height: 20px;vertical-align:middle;color:#414141;}#dpmaxz_all input[type='checkbox']{-ms-transform: scale(1.2); -moz-transform: scale(1.2); -webkit-transform: scale(1.2); -webkit-appearance: checkbox;margin: 0;}#dpmaxz_all .dpmaxz_fbb_shadow {background:url(chrome-extension://pkdnjfgdoolnmiacpdamadcneoblphbj/images/bar-shadow.png) no-repeat scroll 0 0;background-color:transparent;background-size:100% 100%;height:33px;}</style><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head> <body onload="highlightlink()"> <div id="page" style="margin-top:-8px;background-color:#f5f5f4;"><div id="container"> <div class="header"><!--<p style="font-weight:bold;padding:7px;color:white;background-color:gray;margin:0px"><marquee>JavaTpoint will be down for 2 to 4 hours tonight. Sorry for inconvenience.</marquee></p>-->
+
+<table style="width:100%"><tbody><tr><td><div id="headerlink" style="padding:0px;margin:0px"><span style="margin-right:20px;width:45%px"></span><span style="float:right;margin-right:5px;width:45%"><a href="http://www.javatpoint.com/contact-us" style="text-decoration:none;color:#6666CC">Contact Us</a>  | <a href="http://www.javatpoint.com/asknewquestion.jsp" style="text-decoration:none;color:#6666CC">Ask Question</a> | <a href="http://www.javatpoint.com/login.jsp" style="text-decoration:none;color:#6666CC">login</a> <a target="_blank" href="http://feeds.feedburner.com/javatpointsonoo"><img src="./JUnit Tutorial_files/r.png" alt="RSS Feed"></a>&nbsp;<a target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="./JUnit Tutorial_files/m.png" alt="Subscribe to Get Email Alerts"></a>&nbsp;<a target="_blank" href="https://www.facebook.com/javatpoint"><img src="./JUnit Tutorial_files/f.png" alt="Facebook Page"></a>&nbsp;<a target="_blank" href="https://plus.google.com/u/0/113973042385691981314/posts"><img src="./JUnit Tutorial_files/g.png" alt="Google Page"></a>&nbsp;<a target="_blank" href="https://twitter.com/pagejavatpoint"><img src="./JUnit Tutorial_files/t.png" alt="Twitter Page"></a></span><hr class="upperhr"></div> </td></tr><tr><td>
+<div style="float:left;width:230px;"><a href="http://www.javatpoint.com/"><img src="./JUnit Tutorial_files/jtp_logo.png" alt="Javatpoint Logo"></a></div>
+<!--<div style="margin:0px;padding:0px;float:left;width:23%;margin-left:10px;margin-bottom:0px"><a href="http://www.javatpoint.com" style="text-decoration:none;"><span style="color:orange;font-size:28px;font-weight:bold;">Java</span><span style="color:#666600;font-size:40px;font-weight:bold;">T</span><span style="color:red;font-size:28px;font-weight:bold;">point</span></a></div>-->
+
+<div style="float:left;width:50%;"><form class="navbar-search" method="get" action="http://www.google.com/search" target="_blank" data-dpmaxz-eid="1"> <input type="text" name="q" class="search-query span2" placeholder="Search on javatpoint..." title="Search on Javatpoint" data-dpmaxz-eid="2"><input type="hidden" name="sitesearch" value="www.javatpoint.com"></form><!--<span style="margin-left:100px;color:orange;font-size:20px;font-weight:bold;">Happy </span><span style="color:red;font-size:20px;font-weight:bold;">New </span><span style="color:#666600;font-size:20px;font-weight:bold;">Year</span><span style="color:#666600;font-size:30px;font-weight:bold;"> 2015</span>--></div><div style="width:25%;float:right"><div style="padding:0px;margin:0px;margin-right:10px;margin-top:10px;float:right"><a target="_blank" style="background-color:#6699CC;text-decoration:none;color:white;border-radius:2px;font-weight:bold;padding:6px 10px 6px 10px;" href="http://www.javatpoint.com/subscribe.jsp">Subscribe Us</a></div><div style="padding:0px;margin:0px;margin-right:10px;float:right"><p style="padding:0px;margin:0px;margin-top:5px;color:#983688;font-weight:bold;">91-9990449935</p><p style="padding:0px;margin:0px;color:#983688;font-weight:bold;">&nbsp;0120-4256464</p></div></div></td></tr></tbody></table> </div>
+<div class="headermobile">
+<div style="margin-top:10px;padding:0px;text-align:left;">
+<span style="float:left"><input type="image" src="./JUnit Tutorial_files/menuhome64.png" onclick="showmenu()"></span>
+<span style="float:left"><a href="http://www.javatpoint.com/"><img src="./JUnit Tutorial_files/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+</div>
+<div style="margin:0px;padding:0px;clear:both"><form class="navbar-search-m" method="get" action="http://www.google.com/search" target="_blank" data-dpmaxz-eid="3"> <input type="text" name="q" class="search-query span2-m" placeholder="Search on javatpoint..." title="Search on Javatpoint" data-dpmaxz-eid="4"><input type="hidden" name="sitesearch" value="www.javatpoint.com"></form></div></div><div id="link" style="clear:both"> <div class="ddsmoothmenu">
+<ul>
+<li><a href="http://www.javatpoint.com/" class="selected">Home</a></li>
+<li><a href="http://javatpoint.com/java-tutorial">Java</a></li>
+<li><a href="http://javatpoint.com/c-programming-language-tutorial">C</a></li>
+<li><a href="http://javatpoint.com/cpp-tutorial">C++</a></li>
+<li><a href="http://javatpoint.com/c-sharp-tutorial">C#</a></li>
+<li><a href="http://javatpoint.com/sql-tutorial">SQL</a></li>
+<li><a href="http://javatpoint.com/android-tutorial">Android</a></li>
+<li><a href="http://javatpoint.com/php-tutorial">PHP</a></li>
+<li><a href="http://javatpoint.com/html-tutorial">HTML</a></li>
+<li><a href="http://javatpoint.com/css-tutorial">CSS</a></li>
+<li><a href="http://javatpoint.com/xml-tutorial">XML</a></li>
+<li><a href="http://javatpoint.com/javascript-tutorial">JavaScript</a></li>
+<li><a href="http://javatpoint.com/ajax-tutorial">Ajax</a></li>
+<li><a href="http://javatpoint.com/python-tutorial">Python</a></li>
+<li><a href="http://javatpoint.com/examaccess">Quiz</a></li>
+<li><a href="http://javatpoint.com/free-java-projects">Projects</a></li>
+<li><a href="http://javatpoint.com/corejava-interview-questions">Interview Q</a></li>
+<li><a href="http://javatpoint.com/comment.jsp">Comment</a></li>
+<li><a href="http://javatpoint.com/forum">Forum</a></li>
+<li><a href="http://javatpoint.com/training">Training</a></li>
+
+</ul>
+<br style="clear: left">
+</div></div><div class="mobilemenu" style="clear:both"> </div>
+
+<div id="menu"><div class="leftmenu2">
+<h2 class="spanh2"><span class="spanh2">JUnit Tutorial</span></h2>
+<a href="http://javatpoint.com/junit-tutorial"><span>JUnit 4 Tutorial</span></a>
+</div>
+
+
+
+
+
+
+<table id="leftad"><tbody><tr><td><img src="./JUnit Tutorial_files/wh.JPG" alt="space"></td></tr><tr><td>
+<script src="./JUnit Tutorial_files/3605.js.download" async="" type="text/javascript"></script><script type="text/javascript" async="" src="./JUnit Tutorial_files/ga.js.download"></script><script id="facebook-jssdk" src="./JUnit Tutorial_files/sdk.js.download"></script><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="4476401222"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+</td></tr></tbody></table>
+
+</div><div class="onlycontent">
+
+
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_Leaderbaord -->
+<ins class="adsbygoogle cm_jtp_leaderbaord" style="display:inline-block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="9201901915"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<div style="margin-left:0px;">
+<div id="city">
+
+<table>
+<tbody><tr><td>
+<div id="bottomnextup">
+<!--
+<a class="next" href="method-overriding-in-java">next&gt;&gt;</a>
+<a class="next" href="inheritance-in-java">&lt;&lt;prev</a>
+-->
+</div>
+<h1 id="h1">JUnit Tutorial | Testing Framework for Java</h1>
+<p>JUnit tutorial provides basic and advanced concepts of <b>unit testing in java</b> with examples. Our junit tutorial is designed for beginners and professionals.</p>
+<p>It is an <i>open-source testing framework</i> for java programmers. The java programmer can create test cases and test his/her own code.</p>
+<p>It is one of the unit testing framework. Current version is junit 4.</p>
+<p>To perform unit testing, we need to create test cases. The <b>unit test case</b> is a code which ensures that the program logic works as expected.</p>
+<p>The <b>org.junit</b> package contains many interfaces and classes for junit testing such as Assert, Test, Before, After etc.</p>
+
+<hr>
+<h2 class="h2">Types of unit testing</h2>
+<p>There are two ways to perform unit testing: 1) manual testing 2) automated testing.</p>
+
+<h4 class="h4">1) Manual Testing</h4>
+<p>If you execute the test cases manually without any tool support, it is known as manual testing. It is time consuming and less reliable.</p>
+
+<h4 class="h4">2) Automated Testing</h4>
+<p>If you execute the test cases by tool support, it is known as automated testing. It is fast and more reliable.</p>
+
+<hr>
+<h4 class="h4">Annotations for Junit testing</h4>
+<p>The Junit 4.x framework is annotation based, so let's see the annotations that can be used while writing the test cases.</p>
+<p><b>@Test</b> annotation specifies that method is the test method.</p>
+<p><b>@Test(timeout=1000)</b> annotation specifies that method will be failed if it takes longer than 1000 milliseconds (1 second).</p>
+<p><b>@BeforeClass</b> annotation specifies that method will be invoked only once, before starting all the tests.</p>
+<p><b>@Before</b> annotation specifies that method will be invoked before each test.</p>
+<p><b>@After</b> annotation specifies that method will be invoked after each test.</p>
+<p><b>@AfterClass</b> annotation specifies that method will be invoked only once, after finishing all the tests.</p>
+
+<hr>
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- CM_JTP_WTC_Responsive -->
+<ins class="adsbygoogle cm_jtp_wtc_responsive" style="display:inline-block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="6746133113"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<h2 class="h2">Assert class</h2>
+<p>The org.junit.Assert class provides methods to assert the program logic.</p>
+<h4 id="h4">Methods of Assert class</h4>
+<p>The common methods of Assert class are as follows:</p>
+<ol>
+<li><b>void assertEquals(boolean expected,boolean actual)</b>: checks that two primitives/objects are equal. It is overloaded.</li>
+<li><b>void assertTrue(boolean condition)</b>: checks that a condition is true.</li>
+<li><b>void assertFalse(boolean condition)</b>: checks that a condition is false.</li>
+<li><b>void assertNull(Object obj)</b>: checks that object is null.</li>
+<li><b>void assertNotNull(Object obj)</b>: checks that object is not null.</li>
+</ol>
+<hr>
+<h4 class="h4">Required jar files</h4>
+<p>You need to load <b>junit4.jar</b> and <b>hamcrest-core.jar</b> files.</p>
+<p><a href="http://javatpoint.com/src/junit/junit4jars.zip">download the junit jar files</a></p>
+
+<hr>
+<h2 class="h2">Simple JUnit example in eclipse IDE</h2>
+<p>Let's see the directory structure of this example.</p>
+<img src="./JUnit Tutorial_files/junitdirectory.png" alt="directory structure of junit example in eclipse">
+
+<h4 class="h4">Write the program logic</h4>
+<p>Let's write the logic to find the maximum number for an array.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;"></a></div></div><ol start="1" class="dp-j"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;com.javatpoint.logic;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Calculation&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;findMax(</span><span class="keyword">int</span><span>&nbsp;arr[]){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span><span>&nbsp;max=</span><span class="number">0</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>(</span><span class="keyword">int</span><span>&nbsp;i=</span><span class="number">1</span><span>;i&lt;arr.length;i++){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(max&lt;arr[i])&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max=arr[i];&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;max;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">package com.javatpoint.logic;
+public class Calculation {
+
+	public static int findMax(int arr[]){
+		int max=0;
+		for(int i=1;i&lt;arr.length;i++){
+			if(max&lt;arr[i])
+				max=arr[i];
+		}
+		return max;
+	}
+}
+</textarea></div>
+<hr>
+<h4 class="h4">Write the test case</h4>
+<p>Here, we are using JUnit 4, so there is no need to inherit TestCase class. The main testing code is written in the testFindMax() method. But we can also perform some task before and after each test, as you can see in the given program.</p>
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;"></a></div></div><ol start="1" class="dp-j"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;com.javatpoint.testcase;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;org.junit.Assert.*;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;com.javatpoint.logic.*;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;org.junit.Test;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;TestLogic&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Test</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;testFindMax(){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertEquals(<span class="number">4</span><span>,Calculation.findMax(</span><span class="keyword">new</span><span>&nbsp;</span><span class="keyword">int</span><span>[]{</span><span class="number">1</span><span>,</span><span class="number">3</span><span>,</span><span class="number">4</span><span>,</span><span class="number">2</span><span>}));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertEquals(-<span class="number">1</span><span>,Calculation.findMax(</span><span class="keyword">new</span><span>&nbsp;</span><span class="keyword">int</span><span>[]{-</span><span class="number">12</span><span>,-</span><span class="number">1</span><span>,-</span><span class="number">3</span><span>,-</span><span class="number">4</span><span>,-</span><span class="number">2</span><span>}));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">package com.javatpoint.testcase;
+
+import static org.junit.Assert.*;
+import com.javatpoint.logic.*;
+import org.junit.Test;
+
+public class TestLogic {
+
+	@Test
+	public void testFindMax(){
+		assertEquals(4,Calculation.findMax(new int[]{1,3,4,2}));
+		assertEquals(-1,Calculation.findMax(new int[]{-12,-1,-3,-4,-2}));
+	}
+}
+
+</textarea></div>
+<div id="download">
+<a href="http://javatpoint.com/src/junit/junittesting.zip">download this example</a>
+</div>
+<p>To run this example, <b>right click on TestLogic class -&gt; Run As -&gt; 1Junit Test</b>.
+</p><div class="codeblock3"><pre><strong>Output:</strong>Assertion Error
+</pre></div>
+<p>Let's see the output displayed in eclipse IDE.</p>
+<img src="./JUnit Tutorial_files/junitoutput.png" alt="junit example in eclipse with output">
+
+<p>As you can see, when we pass the negative values, it throws AssertionError because second time findMax() method returns 0 instead of -1. It means our program logic is incorrect.</p>
+<hr>
+<h4 class="h4">Correct program logic</h4>
+<p>As you can see, program logic to find the maximum number for the given array is not correct because it doesn't return -1 in case of negative values. The correct program logic is given below:</p>
+
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;"></a></div></div><ol start="1" class="dp-j"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;com.javatpoint.logic;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Calculation&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;findMax(</span><span class="keyword">int</span><span>&nbsp;arr[]){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span><span>&nbsp;max=arr[</span><span class="number">0</span><span>];</span><span class="comment">//arr[0]&nbsp;instead&nbsp;of&nbsp;0</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>(</span><span class="keyword">int</span><span>&nbsp;i=</span><span class="number">1</span><span>;i&lt;arr.length;i++){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(max&lt;arr[i])&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max=arr[i];&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;max;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">package com.javatpoint.logic;
+public class Calculation {
+
+	public static int findMax(int arr[]){
+		int max=arr[0];//arr[0] instead of 0
+		for(int i=1;i&lt;arr.length;i++){
+			if(max&lt;arr[i])
+				max=arr[i];
+		}
+		return max;
+	}
+}
+</textarea></div>
+<p>If you run the junit program again, you will see the following output.</p>
+<img src="./JUnit Tutorial_files/junitoutput2.png" alt="example of junit framework with output">
+<hr>
+<h2 id="h2">Another example of Junit framework</h2>
+
+<h4 class="h4">Write the program code</h4>
+
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;"></a></div></div><ol start="1" class="dp-j"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;com.javatpoint.logic;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;Calculation&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//method&nbsp;that&nbsp;returns&nbsp;maximum&nbsp;number</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;findMax(</span><span class="keyword">int</span><span>&nbsp;arr[]){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">int</span><span>&nbsp;max=</span><span class="number">0</span><span>;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">for</span><span>(</span><span class="keyword">int</span><span>&nbsp;i=</span><span class="number">1</span><span>;i&lt;arr.length;i++){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span><span>(max&lt;arr[i])&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;max=arr[i];&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;max;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//method&nbsp;that&nbsp;returns&nbsp;cube&nbsp;of&nbsp;the&nbsp;given&nbsp;number</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">int</span><span>&nbsp;cube(</span><span class="keyword">int</span><span>&nbsp;n){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;n*n*n;&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//method&nbsp;that&nbsp;returns&nbsp;reverse&nbsp;words&nbsp;</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;String&nbsp;reverseWord(String&nbsp;str){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuilder&nbsp;result=<span class="keyword">new</span><span>&nbsp;StringBuilder();&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringTokenizer&nbsp;tokenizer=<span class="keyword">new</span><span>&nbsp;StringTokenizer(str,</span><span class="string">"&nbsp;"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">while</span><span>(tokenizer.hasMoreTokens()){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;StringBuilder&nbsp;sb=<span class="keyword">new</span><span>&nbsp;StringBuilder();&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.append(tokenizer.nextToken());&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sb.reverse();&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.append(sb);&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.append(<span class="string">"&nbsp;"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">return</span><span>&nbsp;result.toString();&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">package com.javatpoint.logic;
+public class Calculation {
+	//method that returns maximum number
+	public static int findMax(int arr[]){
+		int max=0;
+		for(int i=1;i&lt;arr.length;i++){
+			if(max&lt;arr[i])
+				max=arr[i];
+		}
+		return max;
+	}
+	//method that returns cube of the given number
+	public static int cube(int n){
+		return n*n*n;
+	}
+	//method that returns reverse words 
+	public static String reverseWord(String str){
+
+		StringBuilder result=new StringBuilder();
+		StringTokenizer tokenizer=new StringTokenizer(str," ");
+
+		while(tokenizer.hasMoreTokens()){
+		StringBuilder sb=new StringBuilder();
+		sb.append(tokenizer.nextToken());
+		sb.reverse();
+
+		result.append(sb);
+		result.append(" ");
+		}
+		return result.toString();
+	}
+}
+</textarea></div>
+
+<h4 class="h4">Write the test case</h4>
+
+<div class="codeblock"><div class="dp-highlighter"><div class="bar"><div class="tools"><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;ViewSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;PrintSource&#39;,this);return false;"></a><a href="http://javatpoint.com/junit-tutorial#" onclick="dp.sh.Toolbar.Command(&#39;About&#39;,this);return false;"></a></div></div><ol start="1" class="dp-j"><li class="alt"><span><span class="keyword">package</span><span>&nbsp;com.javatpoint.testcase;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;org.junit.Assert.assertEquals;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;org.junit.After;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;org.junit.AfterClass;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;org.junit.Before;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;org.junit.BeforeClass;&nbsp;&nbsp;</span></span></li><li class=""><span><span class="keyword">import</span><span>&nbsp;org.junit.Test;&nbsp;&nbsp;</span></span></li><li class="alt"><span><span class="keyword">import</span><span>&nbsp;com.javatpoint.logic.Calculation;&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span><span class="keyword">public</span><span>&nbsp;</span><span class="keyword">class</span><span>&nbsp;TestCase2&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@BeforeClass</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;setUpBeforeClass()&nbsp;</span><span class="keyword">throws</span><span>&nbsp;Exception&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"before&nbsp;class"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Before</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;setUp()&nbsp;</span><span class="keyword">throws</span><span>&nbsp;Exception&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"before"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Test</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;testFindMax(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"test&nbsp;case&nbsp;find&nbsp;max"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertEquals(<span class="number">4</span><span>,Calculation.findMax(</span><span class="keyword">new</span><span>&nbsp;</span><span class="keyword">int</span><span>[]{</span><span class="number">1</span><span>,</span><span class="number">3</span><span>,</span><span class="number">4</span><span>,</span><span class="number">2</span><span>}));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertEquals(-<span class="number">2</span><span>,Calculation.findMax(</span><span class="keyword">new</span><span>&nbsp;</span><span class="keyword">int</span><span>[]{-</span><span class="number">12</span><span>,-</span><span class="number">3</span><span>,-</span><span class="number">4</span><span>,-</span><span class="number">2</span><span>}));&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Test</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;testCube(){&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"test&nbsp;case&nbsp;cube"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertEquals(<span class="number">27</span><span>,Calculation.cube(</span><span class="number">3</span><span>));&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@Test</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;testReverseWord(){&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"test&nbsp;case&nbsp;reverse&nbsp;word"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assertEquals(<span class="string">"ym&nbsp;eman&nbsp;si&nbsp;nahk"</span><span>,Calculation.reverseWord(</span><span class="string">"my&nbsp;name&nbsp;is&nbsp;khan"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@After</span><span>&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;tearDown()&nbsp;</span><span class="keyword">throws</span><span>&nbsp;Exception&nbsp;{&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"after"</span><span>);&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class=""><span>&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="annotation">@AfterClass</span><span>&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">public</span><span>&nbsp;</span><span class="keyword">static</span><span>&nbsp;</span><span class="keyword">void</span><span>&nbsp;tearDownAfterClass()&nbsp;</span><span class="keyword">throws</span><span>&nbsp;Exception&nbsp;{&nbsp;&nbsp;</span></span></li><li class="alt"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(<span class="string">"after&nbsp;class"</span><span>);&nbsp;&nbsp;</span></span></li><li class=""><span>&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;</span></li><li class="alt"><span>&nbsp;&nbsp;</span></li><li class=""><span>}&nbsp;&nbsp;</span></li></ol></div><textarea name="code" class="java" style="display: none;">package com.javatpoint.testcase;
+
+import static org.junit.Assert.assertEquals;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import com.javatpoint.logic.Calculation;
+
+public class TestCase2 {
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		System.out.println("before class");
+	}
+	@Before
+	public void setUp() throws Exception {
+		System.out.println("before");
+	}
+
+	@Test
+	public void testFindMax(){
+		System.out.println("test case find max");
+		assertEquals(4,Calculation.findMax(new int[]{1,3,4,2}));
+		assertEquals(-2,Calculation.findMax(new int[]{-12,-3,-4,-2}));
+	}
+	@Test
+	public void testCube(){
+		System.out.println("test case cube");
+		assertEquals(27,Calculation.cube(3));
+	}
+	@Test
+	public void testReverseWord(){
+		System.out.println("test case reverse word");
+		assertEquals("ym eman si nahk",Calculation.reverseWord("my name is khan");
+	}
+	@After
+	public void tearDown() throws Exception {
+		System.out.println("after");
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+		System.out.println("after class");
+	}
+
+}
+
+</textarea></div>
+
+<div class="codeblock3"><pre><strong>Output:</strong>before class
+       before
+       test case find max
+       after
+       before
+       test case cube
+       after
+       before
+       test case reverse word
+       after
+       after class
+</pre></div>
+
+<div id="download">
+<a href="http://javatpoint.com/src/junit/junittesting.zip">download this example</a>
+</div>
+<!--
+<div class="nexttopicdiv">
+<span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="java-bean">Java Bean</a></span>
+</div>
+-->
+<br><br>
+<!--
+<div id="bottomnext">
+<a style="float:left" class="next" href="inheritance-in-java">&lt;&lt;prev</a>
+
+<a style="float:right" class="next" href="method-overriding-in-java">next&gt;&gt;</a>
+</div>
+-->
+<br><br>
+</td></tr>
+</tbody></table>
+</div>
+
+
+
+<!-- latest tutorials start -->
+<fieldset class="gra1footer">
+<h2 class="h2">Latest 4 Tutorials on JavaTpoint</h2>
+<div class="firsthomecontent">
+
+<a href="http://www.javatpoint.com/sqlite-tutorial">
+<div class="homecontent">
+<img src="./JUnit Tutorial_files/sqlite-home.png" alt="SQLite tutorial"><span class="homespan">SQLite</span>
+</div>
+</a>
+
+<a href="http://www.javatpoint.com/spring-boot-tutorial">
+<div class="homecontent">
+<img src="./JUnit Tutorial_files/spring-boot-home.jpg" alt="Spring Boot tutorial"><span class="homespan">Spring Boot</span>
+</div>
+</a>
+
+<a href="http://javatpoint.com/cassandra-tutorial">
+<div class="homecontent">
+<img src="./JUnit Tutorial_files/cassandra-home.jpg" alt="Cassandra tutorial"><span class="homespan">Cassandra</span>
+</div>
+</a>
+
+<a href="http://www.javatpoint.com/jsf-tutorial">
+<div class="homecontent">
+<img src="./JUnit Tutorial_files/jsf-home.jpg" alt="JSF tutorial"><span class="homespan">JSF</span>
+</div>
+</a>
+
+</div>
+</fieldset>
+<!-- latest tutorial end -->
+<br>
+<!-- social sharing buttons -->
+<!--facebook-->
+<span id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./JUnit Tutorial_files/iKWhU6BAGf7.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./JUnit Tutorial_files/iKWhU6BAGf7(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></span>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=151763741599302";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<span class="fb-share-button fb_iframe_widget" data-href="http://www.javatpoint.com/junit-tutorial" data-layout="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=151763741599302&amp;container_width=0&amp;href=http%3A%2F%2Fwww.javatpoint.com%2Fjunit-tutorial&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey"><span style="vertical-align: bottom; width: 80px; height: 20px;"><iframe name="f28bc25fd348078" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="./JUnit Tutorial_files/share_button.html" style="border: none; visibility: visible; width: 80px; height: 20px;" class=""></iframe></span></span>
+
+</div>
+
+
+<br><div class="mobilemenu" style="clear:both">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- responsivemobilefooter --><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="8222866318" data-ad-format="auto"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div></div>
+<div id="right" style="width:15%;float:left;margin-left:10px;margin-top:10px;">
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="3155368314"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script><br><br><br>
+
+
+
+
+</div>
+<div class="right1024" style="float:left;margin-left:10px;margin-top:120px;"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><!-- right1024only --><ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px" data-ad-client="ca-pub-4699858549023382" data-ad-slot="2180118716"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<br><br>
+</div>
+
+<div id="footer" style="clear:both;width:100%">
+
+<script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script><hr>
+
+<div style="padding:0px;margin:0px;text-align:center"><sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup><a target="_blank" href="http://feeds.feedburner.com/javatpointsonoo"><img src="./JUnit Tutorial_files/rss1.png" alt="RSS Feed"></a><a target="_blank" href="http://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="./JUnit Tutorial_files/mail1.png" alt="Subscribe to Get Email Alerts"></a><a target="_blank" href="https://www.facebook.com/javatpoint"><img src="./JUnit Tutorial_files/facebook1.jpg" alt="Facebook Page"></a><a target="_blank" rel="author" href="https://plus.google.com/u/0/113973042385691981314/posts"><img src="./JUnit Tutorial_files/google1.png" alt="Google Page"></a><a target="_blank" href="https://twitter.com/pagejavatpoint"><img src="./JUnit Tutorial_files/twitter1.png" alt="Twitter Page"></a><a target="_blank" href="http://javatpoint.blogspot.com/"><img src="./JUnit Tutorial_files/blog.png" alt="Blog Page"></a><a href="http://javatpoint.com/junit-tutorial#" style="font:bold 18px arial;text-decoration:none;"><sup>↑Top</sup></a></div><div style="margin:auto 0px;line-height:20px;padding:0px 40px;font-size:12px;height:390px;background:#6699CC;color: white; font-family:serif; border-bottom: solid 1px #A3AE7E;"> <div id="innerfooter"> <div><span style="text-decoration:none;font-size:larger;font-family:serif;color:white;font-weight:bolder;">Tutorials</span> <hr><ul class="footer-list"> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/java-tutorial">» Core Java Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/servlet-tutorial">» Servlet Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/jsp-tutorial">» JSP Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/java-mail-api-tutorial">» Mail API Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/design-patterns-in-java">» Design Pattern Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/struts-2-tutorial">» Struts Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/spring-tutorial">» Spring Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/hibernate-tutorial">» Hibernate Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/android-tutorial">» Android Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/javascript-tutorial">» JavaScript Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/sql-tutorial">» SQL Tutorial</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/c-programming-language-tutorial">» C Tutorial</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/ajax-tutorial">» AJAX Tutorial</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/junit-tutorial">» JUnit Tutorial</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/jaxb-tutorial">» JAXB Tutorial</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/maven-tutorial">» Maven Tutorial</a></li></ul> </div> <div><span style="text-decoration:none;font-size:larger;font-family:serif;color:white;font-weight:bolder;">Interview Questions</span> <hr><ul class="footer-list"> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/corejava-interview-questions">» Java Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/servletinterview">» Servlet Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/jspinterview">» JSP Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/hibernate-interview-questions">» Hibernate Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/spring-interview-questions">» Spring Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/android-interview-questions">» Android Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/sql-interview-questions">» SQL Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/pl-sql-interview-questions">» PL/SQL Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/oracle-interview-questions">» Oracle Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/mysql-interview-questions">» MySQL Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/sql-server-interview-questions">» SQL Server Interview</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/mongodb-interview-questions">» MongoDB Interview</a></li> <li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/cloud-computing-interview-questions">» Cloud Interview</a></li> </ul> </div><div><a style="font-weight:bolder;text-decoration: none;text-align:center;font-size:larger;font-family:serif;color:white;" target="_blank" href="http://www.javatpoint.com/examaccess">Quizzes</a><hr><ul class="footer-list"><li><a target="_blank" href="http://www.javatpoint.com/core-java-quiz" style="text-decoration: none;font-family:serif;color:white;">» Core Java quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/servlet-quiz" style="text-decoration: none;font-family:serif;color:white;">» Servlet quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/jsp-quiz" style="text-decoration: none;font-family:serif;color:white;">» JSP quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/struts-quiz" style="text-decoration: none;font-family:serif;color:white;">» Struts2 quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/android-quiz" style="text-decoration: none;font-family:serif;color:white;">» Android quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/scjp-quiz" style="text-decoration: none;font-family:serif;color:white;">» OCJP quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/scwcd-quiz" style="text-decoration: none;font-family:serif;color:white;">» OCWCD quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/hibernate-quiz" style="text-decoration: none;font-family:serif;color:white;">» Hibernate quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/spring-quiz" style="text-decoration: none;font-family:serif;color:white;">» Spring quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/c-quiz" style="text-decoration: none;font-family:serif;color:white;">» C quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/cloud-computing-quiz" style="text-decoration: none;font-family:serif;color:white;">» Cloud Computing quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/javascript-quiz" style="text-decoration: none;font-family:serif;color:white;">» JavaScript quiz</a></li><li><a target="_blank" href="http://www.javatpoint.com/sql-quiz" style="text-decoration: none;font-family:serif;color:white;">» SQL quiz</a></li></ul></div><div><a style="font-weight:bolder;text-decoration: none;font-size:larger;font-family:serif;color:white;text-align:center;" target="_blank" href="http://www.javatpoint.com/forum">Forum</a><hr><ul class="footer-list"><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=corejava">» Core Java Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=servlet">» Servlet Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=jsp">» JSP Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=struts">» Struts Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=spring">» Spring Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=hibernate">» Hibernate Ques.</a></li><li><a style="text-decoration: none;font-family:serif;color:white;" href="http://www.javatpoint.com/forum.jsp?category=android">» Android Ques.</a></li></ul><hr><a style="font-weight:bolder;text-decoration: none;text-align:center;font-size:larger;font-family:serif;color:white;" href="http://www.javatpoint.com/free-java-projects">Projects</a><hr><a style="font-weight:bolder;text-decoration: none;font-size:larger;font-family:serif;text-align:center;color:white;" href="http://www.sssit.org/" rel="nofollow">SSS IT PVT LTD</a><hr><ul class="footer-list"><li><a rel="nofollow" href="http://www.sssit.org/development" style="text-decoration: none;font-family:serif;color:white;">» Development</a></li><li><a href="http://javatpoint.com/training" style="text-decoration: none;font-family:serif;color:white;">» Training</a></li><li><a rel="nofollow" href="http://www.sssit.org/seo" style="text-decoration: none;font-family:serif;color:white;">» SEO</a></li><li><a rel="nofollow" href="http://www.sssit.org/consultancy" style="text-decoration: none;font-family:serif;color:white;">» Consultancy</a></li></ul></div><div style="border-right:2px solid white;"><span style="font-weight:bolder;text-decoration: none;font-size:larger;font-family:serif;color:white;float:right;padding-right:16px;">CONTACT US</span><br><hr><p style="text-align:center;border-bottom:1px solid white;padding-bottom:30px;">Tel. : 0120-4256464<br>Mob. : +91 9990449935<br>Email : enquiry@sssit.org<br>Address: 2nd Floor, G-13,<br> (Near 16 Metro Station),<br>Sec - 3, Noida, <br>201301, UP, India<br><a href="http://www.javatpoint.com/contact-us" style="text-decoration: none;font-family:serif;color:white;">» Contact Us</a><br><a href="http://www.javatpoint.com/privacy-policy" style="text-decoration: none;font-family:serif;color:white;">» Privacy Policy</a></p><p style="text-align:center;border-bottom:1px solid white;padding-bottom:30px;padding-left:none;"><br>© 2011-2017 Javatpoint.<br> All Rights Reserved.<br><a href="http://www.dmca.com/Protection/Status.aspx?ID=e8b533d5-7356-47f5-820b-72c890f03a4e" rel="nofollow" title="DMCA"> <img src="./JUnit Tutorial_files/dmca_protected_sml_120c.png" alt="DMCA.com"></a></p></div></div></div>
+
+</div></div></div><script src="./JUnit Tutorial_files/shcoreandbrush.js.download"></script><script type="text/javascript" src="./JUnit Tutorial_files/google.js.download"></script><embed src="" width="1" height="1">
+<div style="visibility: hidden;"><script language="javascript" type="text/javascript" src="./JUnit Tutorial_files/19140635.js.download"></script><a href="http://www.51.la/?19140635" target="_blank" title="51.La 网站流量统计系统"><img alt="51.La 网站流量统计系统" src="./JUnit Tutorial_files/icon_0.gif" style="border:none"></a>
+</div>
+
+<script type="text/javascript"> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0027/3605.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+  </body></html>

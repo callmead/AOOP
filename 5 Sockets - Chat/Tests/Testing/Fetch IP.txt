@@ -1,0 +1,10 @@
+		//Fetching the IP and Host...
+		InetAddress ip;
+		try{
+			ip = InetAddress.getLocalHost();
+			//System.out.println("Server IP: " + ip.getHostAddress());
+			ServerIP = ip.getHostAddress();
+			ServerName = ip.getHostName();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}

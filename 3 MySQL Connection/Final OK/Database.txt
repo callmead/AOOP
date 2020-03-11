@@ -1,0 +1,39 @@
+Create Database CS3331;
+
+Use CS3331;
+
+Create Table Test(Name varchar(40));
+
+INSERT into Test (Name) values('Hareem Adeel');
+INSERT into Test (Name) values('Nazia Sharmin');
+INSERT into Test (Name) values('Adeel Malik');
+INSERT into Test (Name) values('Linda Nodjiman');
+INSERT into Test (Name) values('Nodjiman');
+INSERT into Test (Name) values('Archi Dasgupta');
+INSERT into Test (Name) values('Nusrat Sharmin');
+INSERT into Test (Name) values('Rubio Alondra');
+INSERT into Test (Name) values('Alehandra');
+INSERT into Test (Name) values('Giovanni Carlos');
+INSERT into Test (Name) values('Ruben Acosta');
+INSERT into Test (Name) values('Irvin Giovani');
+------------------------------------------------
+
+Create Table Person(Name varchar(40), Age TINYINT);
+
+INSERT into Person (Name, Age) values('Hareem Adeel',1);
+INSERT into Person (Name, Age) values('Nazia Sharmin',28);
+INSERT into Person (Name, Age) values('Adeel Malik',34);
+
+INSERT into Person (Name, Age) values('Linda Nodjiman',60);
+INSERT into Person (Name, Age) values('Nodjiman',70);
+INSERT into Person (Name, Age) values('Archi Dasgupta',30);
+INSERT into Person (Name, Age) values('Nusrat Sharmin',35);
+INSERT into Person (Name, Age) values('Rubio Alondra',22);
+INSERT into Person (Name, Age) values('Alehandra Rubben',20);
+INSERT into Person (Name, Age) values('Giovanni Carlos',4);
+INSERT into Person (Name, Age) values('Ruben Acosta',45);
+INSERT into Person (Name, Age) values('Irvin Giovani',25);
+-----------
+
+
+

@@ -1,0 +1,15 @@
+Tic Toc Toe Game Development
+
+Use Swing for Graphics (Chapter 8.3 explains swing)
+Use only Notepad++
+Make sure this is your own work
+
+Submit by Monday, 6th Feb 2017, mid night.
+Upload the .java files on Blackboard
+
+Hints
+Assume both players(Player1, Player2) are human
+3x3 Grid, 9 slots
+
+Submit TAR file (Code and HTML Docs) Interface Must!
+JavaDoc (Classes, Methods, Parameters, Return Values, Author)

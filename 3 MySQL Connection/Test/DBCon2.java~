@@ -1,0 +1,188 @@
+import java.util.Date;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.border.*;
+import java.io.*;
+import java.net.URL;
+import java.net.MalformedURLException;
+
+public class DBCon2 extends JFrame
+{//Class
+
+ JPanel p1 = new JPanel();
+ JLabel lblUser = new JLabel();
+ JLabel lblPass = new JLabel();
+ TitledBorder titledBorder1;
+
+ JTextField txtDBUser = new JTextField();
+ JPasswordField txtPass = new JPasswordField();
+
+ String DBUser;
+ String DBPass;
+ int SNo;
+
+ JButton btnOk = new JButton();
+ JButton btnCancel = new JButton();
+
+ public DBCon2()
+ {//Cons
+
+  this.setTitle("Database Connection");
+  this.setBounds(250, 200, 500, 500);
+  this.getContentPane().setLayout(null);
+  this.getContentPane().add(p1);
+  this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+  this.setResizable(false);
+  this.getContentPane().setBackground(Color.white);
+  titledBorder1 = new TitledBorder("");
+  txtDBUser.requestFocus();
+
+  p1.setLayout(null);
+  p1.setBounds(2, 2, 450, 110);
+  p1.setBorder(titledBorder1);
+  p1.add(lblUser);
+  p1.add(lblPass);
+  p1.add(txtDBUser);
+  p1.add(txtPass);
+  p1.add(btnOk);
+  p1.add(btnCancel);
+  p1.setBackground(Color.white);
+
+  lblUser.setText("DB User:");
+  lblUser.setFont(new java.awt.Font("Tahoma", 1, 11));
+  lblUser.setBounds(28, 10, 60, 20);
+  lblPass.setText("Password:");
+  lblPass.setFont(new java.awt.Font("Tahoma", 1, 11));
+  lblPass.setBounds(220, 10, 60, 20);
+
+  txtDBUser.setBounds(100, 10, 100, 20);
+  txtDBUser.setCaretColor(Color.blue);
+  txtDBUser.setFont(new Font("Tahoma", 1, 12));
+  txtDBUser.setForeground(Color.blue);
+  txtDBUser.setText("root");
+  txtDBUser.setSelectionStart(0);
+  txtDBUser.setSelectionEnd(5);
+  txtDBUser.addKeyListener(new KeyAdapter()
+  {
+   public void keyPressed(KeyEvent ke1)
+   {
+    if (ke1.getKeyCode() == KeyEvent.VK_ENTER){txtPass.requestFocus();}
+   }
+   public void keyTyped(KeyEvent ke1)
+   {
+    if(txtDBUser.getText().length()>5)
+    {
+     if(ke1.getKeyCode()==8)
+     {}
+     else
+     ke1.consume();
+    }
+   if((ke1.getKeyChar()==32)){ke1.consume();}//Space
+   }
+  });
+
+  txtDBUser.addFocusListener(new FocusAdapter()
+  {
+   public void focusGained(FocusEvent f)
+   {
+    txtDBUser.selectAll();
+   }
+   public void focusLost(FocusEvent f)
+   {
+   }
+  });
+
+  txtPass.setBounds(100, 35, 100, 20);
+  txtPass.setEchoChar(' ');
+  txtPass.setCaretColor(Color.blue);
+  txtPass.setFont(new Font("Tahoma", 1, 12));
+  txtPass.setForeground(Color.blue);
+  txtPass.addFocusListener(new FocusAdapter()
+  {
+   public void focusGained(FocusEvent f)
+   {
+    txtPass.selectAll();
+   }
+   public void focusLost(FocusEvent f) {}
+  });
+
+  txtPass.addKeyListener(new KeyAdapter()
+  {
+   public void keyPressed(KeyEvent ke1)
+   {
+    txtPass.setCaretColor(Color.white);
+    if (ke1.getKeyCode() == KeyEvent.VK_ENTER)
+    {
+     ke1.setKeyCode(KeyEvent.VK_TAB);
+     checkUser();
+    }
+   }
+   public void KeyReleased(KeyEvent ke1) {}
+   public void KeyTyped(KeyEvent ke1) {}
+  });
+
+  btnOk.setText("Ok");
+  btnOk.setBounds(48, 73, 80, 25);
+  btnOk.setMnemonic('O');
+  btnOk.setBorder(BorderFactory.createRaisedBevelBorder());
+  btnOk.addActionListener(new java.awt.event.ActionListener()
+  { //Action Listener
+   public void actionPerformed(ActionEvent x1)
+   {
+    checkUser();
+   }
+  });
+
+  btnCancel.setText("Cancel");
+  btnCancel.setBounds(158, 73, 80, 25);
+  btnCancel.setMnemonic('n');
+  btnCancel.setBorder(BorderFactory.createRaisedBevelBorder());
+  btnCancel.addActionListener(new java.awt.event.ActionListener()
+  { //ActionListener
+   public void actionPerformed(ActionEvent x2)
+   {
+    System.exit(0);
+   }
+  });
+
+  centerForm(this);
+  this.setVisible(true);
+  
+  if(DBUser!=null){txtDBUser.setText(DBUser);}
+
+ }//End Cons
+
+ /**
+ * Reads the DBUser from File
+ *
+ */
+
+ 
+
+ private void checkUser()
+ {
+ 
+ }
+
+ 
+ /**
+ * Centers the Form on Screen
+ *
+ */
+
+ public void centerForm(JFrame f)
+ {
+  int x = (int) Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+  int y = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+  int cx = (x - f.getWidth()) / 2;
+  int cy = (y - f.getHeight()) / 2;
+  f.setLocation(cx, cy);
+ }
+ 
+ public static void main(String args[])
+ {
+   DBCon2 dbc = new DBCon2();
+ }
+
+}//Class
